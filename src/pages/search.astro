@@ -1,4 +1,42 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
 ---
-<Base title="全文検索" noindex><div class="wrap section"><div class="page-title"><span class="eyebrow">SEARCH THE KNOWLEDGE</span><h1>知りたいことを、探す。</h1><p>日本語・英語・略語で、記事の本文まで検索できます。例：屈腱炎 / SDFT / cryotherapy</p></div><div class="search-shell" id="search"></div><noscript><p>検索にはJavaScriptが必要です。<a href="/learn/">学習ガイドから記事を探す</a>こともできます。</p></noscript></div><link href="/pagefind/pagefind-ui.css" rel="stylesheet"/><script is:inline src="/pagefind/pagefind-ui.js"></script><script is:inline>window.addEventListener('DOMContentLoaded',()=>{if(window.PagefindUI){new PagefindUI({element:'#search',showSubResults:true,showImages:false,translations:{placeholder:'キーワードを入力',zero_results:'「[SEARCH_TERM]」に一致する記事はありません。別の表記でお試しください。',search_label:'記事を検索'}})}});</script></Base>
+
+<Base title="全文検索" noindex>
+  <div class="wrap section">
+    <div class="page-title">
+      <span class="eyebrow">SEARCH THE KNOWLEDGE</span>
+      <h1>知りたいことを、探す。</h1>
+      <p>
+        日本語・英語・略語で、記事の本文まで検索できます。例：屈腱炎 / SDFT /
+        cryotherapy
+      </p>
+    </div>
+    <div class="search-shell" id="search"></div>
+    <noscript>
+      <p>
+        検索にはJavaScriptが必要です。
+        <a href="/learn/">学習ガイドから記事を探す</a>こともできます。
+      </p>
+    </noscript>
+  </div>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.PagefindUI) {
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+          translations: {
+            placeholder: "キーワードを入力",
+            zero_results:
+              "「[SEARCH_TERM]」に一致する記事はありません。別の表記でお試しください。",
+            search_label: "記事を検索",
+          },
+        });
+      }
+    });
+  </script>
+</Base>

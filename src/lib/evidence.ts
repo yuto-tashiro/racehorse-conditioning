@@ -1,11 +1,154 @@
-import { z } from 'zod';
-export const levels = { A: 'Strong · 強い', B: 'Moderate · 中程度', C: 'Limited · 限定的', D: 'Indirect · 間接的', E: 'Insufficient · 不十分' } as const;
-export const effects = { BENEFICIAL: '有益', POSSIBLY_BENEFICIAL: '有益な可能性', NO_CLEAR_EFFECT: '明確な効果なし', POSSIBLY_HARMFUL: '有害な可能性', HARMFUL: '有害', INCONCLUSIVE: '結論できない' } as const;
-export const species = ['EQUINE', 'THOROUGHBRED', 'OTHER_HORSE', 'OTHER_ANIMAL', 'HUMAN', 'IN_VITRO'] as const;
-export const designs = ['SYSTEMATIC_REVIEW','META_ANALYSIS','CONSENSUS','RANDOMIZED_TRIAL','CONTROLLED_TRIAL','COHORT','CASE_CONTROL','CROSS_SECTIONAL','CASE_SERIES','CASE_REPORT','EXPERIMENTAL','EXPERT_REVIEW','MECHANISTIC','HUMAN_EXTRAPOLATION'] as const;
-const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v => !Number.isNaN(Date.parse(v)), 'Invalid date');
-export const claimSchema = z.object({ outcome: z.string().min(1), level: z.enum(['A','B','C','D','E']), effect: z.enum(['BENEFICIAL','POSSIBLY_BENEFICIAL','NO_CLEAR_EFFECT','POSSIBLY_HARMFUL','HARMFUL','INCONCLUSIVE']), conclusion: z.string().min(1), references: z.array(z.string()).min(1) });
-export const articleSchema = z.object({ title: z.string(), english: z.string(), description: z.string(), category: z.enum(['basics','conditions','interventions','assessment','training','management']), region: z.array(z.string()).min(1), tags: z.array(z.string()), order: z.number(), species: z.array(z.enum(species)).min(1), lastReviewed: date, editorialStatus: z.literal('文献確認済み・獣医師監修前'), references: z.array(z.string()).min(1), related: z.array(z.string()), emergency: z.boolean().default(false), limitations: z.string().min(1), claims: z.array(claimSchema).min(1) });
-export const referenceSchema = z.object({ title:z.string().min(1), authors:z.array(z.string()).min(1), year:z.number().int(), journal:z.string(), doi:z.string().regex(/^10\.\d{4,9}\/.+/).nullable(), pmid:z.string().regex(/^\d+$/).nullable(), url:z.url(), species:z.array(z.enum(species)).min(1), population:z.string(), sample_size:z.number().int().positive().nullable(), study_design:z.enum(designs), intervention:z.string(), comparison:z.string(), outcomes:z.array(z.string()), main_findings:z.string(), limitations:z.string(), evidence_tags:z.array(z.string()), regions:z.array(z.string()), conditions:z.array(z.string()), interventions:z.array(z.string()), evidence_level:z.enum(['A','B','C','D','E']), reviewed_by:z.literal('編集時の書誌・抄録確認（専門家監修前）'), last_reviewed:date, verification:z.enum(['ABSTRACT','FULL_TEXT','INSTITUTIONAL']) });
-export function isStale(value: string, now = new Date()) { const cutoff = new Date(value + 'T00:00:00Z'); cutoff.setUTCMonth(cutoff.getUTCMonth() + 24); return now > cutoff; }
-export const categories = { basics: { title:'基礎科学', english:'FOUNDATIONS', summary:'構造と機能をつなぎ、走る身体のしくみを知る。', icon:'01' }, conditions:{title:'障害・不調',english:'CONDITIONS',summary:'症状の背景にある病態と、評価の考え方を学ぶ。',icon:'02'},interventions:{title:'コンディショニング',english:'INTERVENTIONS',summary:'介入の目的と、その効果を支える根拠を調べる。',icon:'03'},assessment:{title:'評価・モニタリング',english:'ASSESSMENT',summary:'触診から画像検査、心拍・乳酸までを読み解く。',icon:'04'},training:{title:'トレーニング',english:'TRAINING SCIENCE',summary:'負荷、適応、回復をひとつのサイクルで考える。',icon:'05'},management:{title:'日常管理',english:'DAILY MANAGEMENT',summary:'栄養、水分、環境から馬の健康を支える。',icon:'06'} } as const;
+import { z } from "zod";
+export const levels = {
+  A: "Strong · 強い",
+  B: "Moderate · 中程度",
+  C: "Limited · 限定的",
+  D: "Indirect · 間接的",
+  E: "Insufficient · 不十分",
+} as const;
+export const effects = {
+  BENEFICIAL: "有益",
+  POSSIBLY_BENEFICIAL: "有益な可能性",
+  NO_CLEAR_EFFECT: "明確な効果なし",
+  POSSIBLY_HARMFUL: "有害な可能性",
+  HARMFUL: "有害",
+  INCONCLUSIVE: "結論できない",
+} as const;
+export const species = [
+  "EQUINE",
+  "THOROUGHBRED",
+  "OTHER_HORSE",
+  "OTHER_ANIMAL",
+  "HUMAN",
+  "IN_VITRO",
+] as const;
+export const designs = [
+  "SYSTEMATIC_REVIEW",
+  "META_ANALYSIS",
+  "CONSENSUS",
+  "RANDOMIZED_TRIAL",
+  "CONTROLLED_TRIAL",
+  "COHORT",
+  "CASE_CONTROL",
+  "CROSS_SECTIONAL",
+  "CASE_SERIES",
+  "CASE_REPORT",
+  "EXPERIMENTAL",
+  "EXPERT_REVIEW",
+  "MECHANISTIC",
+  "HUMAN_EXTRAPOLATION",
+] as const;
+const date = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/)
+  .refine((v) => !Number.isNaN(Date.parse(v)), "Invalid date");
+export const claimSchema = z.object({
+  outcome: z.string().min(1),
+  level: z.enum(["A", "B", "C", "D", "E"]),
+  effect: z.enum([
+    "BENEFICIAL",
+    "POSSIBLY_BENEFICIAL",
+    "NO_CLEAR_EFFECT",
+    "POSSIBLY_HARMFUL",
+    "HARMFUL",
+    "INCONCLUSIVE",
+  ]),
+  conclusion: z.string().min(1),
+  references: z.array(z.string()).min(1),
+});
+export const articleSchema = z.object({
+  title: z.string(),
+  english: z.string(),
+  description: z.string(),
+  category: z.enum([
+    "basics",
+    "conditions",
+    "interventions",
+    "assessment",
+    "training",
+    "management",
+  ]),
+  region: z.array(z.string()).min(1),
+  tags: z.array(z.string()),
+  order: z.number(),
+  species: z.array(z.enum(species)).min(1),
+  lastReviewed: date,
+  editorialStatus: z.literal("文献確認済み・獣医師監修前"),
+  references: z.array(z.string()).min(1),
+  related: z.array(z.string()),
+  emergency: z.boolean().default(false),
+  limitations: z.string().min(1),
+  claims: z.array(claimSchema).min(1),
+});
+export const referenceSchema = z.object({
+  title: z.string().min(1),
+  authors: z.array(z.string()).min(1),
+  year: z.number().int(),
+  journal: z.string(),
+  doi: z
+    .string()
+    .regex(/^10\.\d{4,9}\/.+/)
+    .nullable(),
+  pmid: z.string().regex(/^\d+$/).nullable(),
+  url: z.url(),
+  species: z.array(z.enum(species)).min(1),
+  population: z.string(),
+  sample_size: z.number().int().positive().nullable(),
+  study_design: z.enum(designs),
+  intervention: z.string(),
+  comparison: z.string(),
+  outcomes: z.array(z.string()),
+  main_findings: z.string(),
+  limitations: z.string(),
+  evidence_tags: z.array(z.string()),
+  regions: z.array(z.string()),
+  conditions: z.array(z.string()),
+  interventions: z.array(z.string()),
+  evidence_level: z.enum(["A", "B", "C", "D", "E"]),
+  reviewed_by: z.literal("編集時の書誌・抄録確認（専門家監修前）"),
+  last_reviewed: date,
+  verification: z.enum(["ABSTRACT", "FULL_TEXT", "INSTITUTIONAL"]),
+});
+export function isStale(value: string, now = new Date()) {
+  const cutoff = new Date(value + "T00:00:00Z");
+  cutoff.setUTCMonth(cutoff.getUTCMonth() + 24);
+  return now > cutoff;
+}
+export const categories = {
+  basics: {
+    title: "基礎科学",
+    english: "FOUNDATIONS",
+    summary: "構造と機能をつなぎ、走る身体のしくみを知る。",
+    icon: "01",
+  },
+  conditions: {
+    title: "障害・不調",
+    english: "CONDITIONS",
+    summary: "症状の背景にある病態と、評価の考え方を学ぶ。",
+    icon: "02",
+  },
+  interventions: {
+    title: "コンディショニング",
+    english: "INTERVENTIONS",
+    summary: "介入の目的と、その効果を支える根拠を調べる。",
+    icon: "03",
+  },
+  assessment: {
+    title: "評価・モニタリング",
+    english: "ASSESSMENT",
+    summary: "触診から画像検査、心拍・乳酸までを読み解く。",
+    icon: "04",
+  },
+  training: {
+    title: "トレーニング",
+    english: "TRAINING SCIENCE",
+    summary: "負荷、適応、回復をひとつのサイクルで考える。",
+    icon: "05",
+  },
+  management: {
+    title: "日常管理",
+    english: "DAILY MANAGEMENT",
+    summary: "栄養、水分、環境から馬の健康を支える。",
+    icon: "06",
+  },
+} as const;

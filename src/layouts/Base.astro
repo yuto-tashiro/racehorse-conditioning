@@ -1,8 +1,159 @@
 ---
-import '../styles/global.css';
-interface Props {title?:string;description?:string;article?:boolean;noindex?:boolean}
-const { title='競走馬の身体を、科学から理解する。', description='競走馬の解剖・運動生理・傷害・リハビリテーションを、科学的根拠とその限界から体系的に学ぶ。Racehorse Conditioning Science。', article=false,noindex=false }=Astro.props;
-const canonical=new URL(Astro.url.pathname,Astro.site);
-const nav=[['/topics/basics/','基礎から学ぶ'],['/body/','身体部位'],['/topics/conditions/','障害・不調'],['/evidence/','Evidence Library']];
+import "../styles/global.css";
+interface Props {
+  title?: string;
+  description?: string;
+  article?: boolean;
+  noindex?: boolean;
+}
+const {
+  title = "競走馬の身体を、科学から理解する。",
+  description = "競走馬の解剖・運動生理・傷害・リハビリテーションを、科学的根拠とその限界から体系的に学ぶ。Racehorse Conditioning Science。",
+  article = false,
+  noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [
+  ["/topics/basics/", "基礎から学ぶ"],
+  ["/body/", "身体部位"],
+  ["/topics/conditions/", "障害・不調"],
+  ["/evidence/", "Evidence Library"],
+];
 ---
-<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} | Racehorse Conditioning Science</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:type" content={article?'article':'website'}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/og.png',Astro.site)}/><meta name="twitter:card" content="summary_large_image"/><meta name="theme-color" content="#275e4c"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>{noindex&&<meta name="robots" content="noindex"/>}<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':article?'Article':'WebSite',name:'Racehorse Conditioning Science',headline:title,description,url:canonical,inLanguage:'ja'}).replace(/</g,'\u003c')}/></head><body><a class="skip" href="#main">本文へ移動</a><div class="topbar"><div class="wrap"><span>EVIDENCE-BASED EQUINE CONDITIONING</span><span>競走馬というアスリートを、もっと深く。</span></div></div><header class="header"><div class="wrap header-row"><a href="/" class="brand" aria-label="Racehorse Conditioning Science ホーム"><svg class="brandmark" viewBox="0 0 40 44" fill="none" aria-hidden="true"><path d="M20 2 37 9v15c0 8-10 14-17 18C13 38 3 32 3 24V9Z" stroke="currentColor" stroke-width="1.4"/><path d="m12 31 3-13 8-8 1 6 6 7-2 5-7-3-4 7m2-17 5 2m-2 3h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Racehorse<br/>Conditioning Science<small>競走馬コンディショニング・サイエンス</small></span></a><button class="menu-button" aria-expanded="false" aria-controls="navigation">メニュー</button><nav class="nav" id="navigation" aria-label="メインナビゲーション">{nav.map(([url,text])=><a href={url} aria-current={Astro.url.pathname===url?'page':undefined}>{text}</a>)}<a href="/search/" class="search-link"><span aria-hidden="true">⌕</span> 検索</a></nav></div></header><main id="main"><slot/></main><footer class="footer" data-pagefind-ignore><div class="wrap"><div class="footer-top"><div class="brand">Racehorse<br/>Conditioning Science</div><div><div class="footer-links"><a href="/about/">このサイトについて</a><a href="/evidence-guide/">Evidenceの読み方</a><a href="/glossary/">用語集</a><a href="/cases/">症例学習</a></div><p>本サイトは競走馬のスポーツ医学・コンディショニングに関する教育・研究情報の提供を目的としています。個別の馬の診断・治療・投薬・競走復帰判断を行うものではありません。実際の診療・リハビリテーションは獣医師その他の専門家の評価に基づいて判断してください。</p></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Racehorse Conditioning Science</span><span>科学的根拠と、その限界をともに伝える。</span></div></div></footer><script>const button=document.querySelector<HTMLButtonElement>('.menu-button');button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));document.querySelector('#navigation')?.classList.toggle('open',open)});</script></body></html>
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Racehorse Conditioning Science</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/og.png", Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#275e4c" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": article ? "Article" : "WebSite",
+        name: "Racehorse Conditioning Science",
+        headline: title,
+        description,
+        url: canonical,
+        inLanguage: "ja",
+      }).replace(/</g, "\u003c")}
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      本文へ移動
+    </a>
+    <div class="topbar">
+      <div class="wrap">
+        <span>EVIDENCE-BASED EQUINE CONDITIONING</span>
+        <span>競走馬というアスリートを、もっと深く。</span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="wrap header-row">
+        <a
+          href="/"
+          class="brand"
+          aria-label="Racehorse Conditioning Science 競走馬コンディショニング・サイエンス ホーム"
+        >
+          <svg
+            class="brandmark"
+            viewBox="0 0 40 44"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M20 2 37 9v15c0 8-10 14-17 18C13 38 3 32 3 24V9Z"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="m12 31 3-13 8-8 1 6 6 7-2 5-7-3-4 7m2-17 5 2m-2 3h1"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>
+            Racehorse
+            <br />
+            Conditioning Science
+            <small>競走馬コンディショニング・サイエンス</small>
+          </span>
+        </a>
+        <button
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          メニュー
+        </button>
+        <nav class="nav" id="navigation" aria-label="メインナビゲーション">
+          {nav.map(([url, text]) => (
+            <a
+              href={url}
+              aria-current={Astro.url.pathname === url ? "page" : undefined}
+            >
+              {text}
+            </a>
+          ))}
+          <a href="/search/" class="search-link">
+            <span aria-hidden="true">⌕</span> 検索
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="footer" data-pagefind-ignore>
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="brand">
+            Racehorse
+            <br />
+            Conditioning Science
+          </div>
+          <div>
+            <div class="footer-links">
+              <a href="/about/">このサイトについて</a>
+              <a href="/evidence-guide/">Evidenceの読み方</a>
+              <a href="/glossary/">用語集</a>
+              <a href="/cases/">症例学習</a>
+            </div>
+            <p>
+              本サイトは競走馬のスポーツ医学・コンディショニングに関する教育・研究情報の提供を目的としています。個別の馬の診断・治療・投薬・競走復帰判断を行うものではありません。実際の診療・リハビリテーションは獣医師その他の専門家の評価に基づいて判断してください。
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} Racehorse Conditioning Science
+          </span>
+          <span>科学的根拠と、その限界をともに伝える。</span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>(".menu-button");
+      button?.addEventListener("click", () => {
+        const open = button.getAttribute("aria-expanded") !== "true";
+        button.setAttribute("aria-expanded", String(open));
+        document.querySelector("#navigation")?.classList.toggle("open", open);
+      });
+    </script>
+  </body>
+</html>

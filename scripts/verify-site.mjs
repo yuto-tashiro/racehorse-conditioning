@@ -1,16 +1,143 @@
-import { chromium } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
-import { writeFileSync, mkdirSync, readdirSync, readFileSync, existsSync } from 'node:fs';
-import assert from 'node:assert/strict';
-const origin=process.env.TEST_URL||'http://127.0.0.1:4321';const out=process.env.QA_DIR||'../qa';mkdirSync(out,{recursive:true});
-const browser=await chromium.launch({channel:'chrome',headless:true});const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));const results=[];
-for(const path of ['/','/articles/cryotherapy/','/evidence/','/search/','/cases/']){await page.goto(origin+path);await page.waitForLoadState('networkidle');const a11y=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();results.push({path,violations:a11y.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}))});}
-await page.goto(origin+'/');await page.screenshot({path:out+'/home-desktop.png',fullPage:true});
-await page.goto(origin+'/search/');const search=page.locator('.pagefind-ui__search-input');await search.fill('屈腱炎');await page.locator('.pagefind-ui__result').first().waitFor();assert(await page.locator('.pagefind-ui__result').count()>0);await search.fill('SDFT');await page.waitForTimeout(600);assert(await page.locator('.pagefind-ui__result').count()>0);await search.fill('zzzznonexistent987654');await page.waitForTimeout(600);assert.equal(await page.locator('.pagefind-ui__result').count(),0);
-await page.goto(origin+'/evidence/');await page.locator('select[name="species"]').selectOption('THOROUGHBRED');assert(await page.locator('.library-card:visible').count()>0);await page.locator('#query').fill('zzzznonexistent987654');assert.equal(await page.locator('.library-card:visible').count(),0);await page.getByRole('button',{name:'絞り込みを解除'}).click();await page.waitForTimeout(100);assert(await page.locator('.library-card:visible').count()>10);
-await page.goto(origin+'/cases/');await page.locator('summary').first().click();assert.equal(await page.locator('details').first().getAttribute('open'),'');
-await page.setViewportSize({width:390,height:844});for(const path of ['/','/evidence/','/articles/cryotherapy/','/search/']){await page.goto(origin+path);await page.waitForLoadState('networkidle');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow ${path}`)}await page.goto(origin+'/');await page.getByRole('button',{name:'メニュー'}).click();assert.equal(await page.getByRole('button',{name:'メニュー'}).getAttribute('aria-expanded'),'true');await page.getByRole('button',{name:'メニュー'}).click();await page.screenshot({path:out+'/home-mobile.png',fullPage:true});
+import { chromium, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
+import {
+  writeFileSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  existsSync,
+} from "node:fs";
+import assert from "node:assert/strict";
+const origin = process.env.TEST_URL || "http://127.0.0.1:4321";
+const out = process.env.QA_DIR || "../qa";
+mkdirSync(out, { recursive: true });
+const browser = await chromium.launch({ channel: "chrome", headless: true });
+const context = await browser.newContext({
+  viewport: { width: 1440, height: 1000 },
+});
+const page = await context.newPage();
+const errors = [];
+page.on("pageerror", (e) => errors.push(e.message));
+const results = [];
+for (const path of [
+  "/",
+  "/articles/cryotherapy/",
+  "/evidence/",
+  "/search/",
+  "/cases/",
+]) {
+  await page.goto(origin + path);
+  await page.waitForLoadState("networkidle");
+  const a11y = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
+  results.push({
+    path,
+    violations: a11y.violations.map((v) => ({
+      id: v.id,
+      impact: v.impact,
+      nodes: v.nodes.map((n) => n.target),
+    })),
+  });
+}
+await page.goto(origin + "/");
+await page.screenshot({ path: out + "/home-desktop.png", fullPage: true });
+await page.goto(origin + "/search/");
+const search = page.locator(".pagefind-ui__search-input");
+await search.fill("屈腱炎");
+await page.locator(".pagefind-ui__result").first().waitFor();
+assert((await page.locator(".pagefind-ui__result").count()) > 0);
+await search.fill("SDFT");
+await expect(page.locator(".pagefind-ui__result").first()).toBeVisible();
+await search.fill("zzzznonexistent987654");
+await expect(page.locator(".pagefind-ui__result")).toHaveCount(0, {
+  timeout: 15000,
+});
+await page.goto(origin + "/evidence/");
+await page.locator('select[name="species"]').selectOption("THOROUGHBRED");
+assert((await page.locator(".library-card:visible").count()) > 0);
+await page.locator("#query").fill("zzzznonexistent987654");
+assert.equal(await page.locator(".library-card:visible").count(), 0);
+await page.getByRole("button", { name: "絞り込みを解除" }).click();
+await page.waitForTimeout(100);
+assert((await page.locator(".library-card:visible").count()) > 10);
+await page.goto(origin + "/cases/");
+await page.locator("summary").first().click();
+assert.equal(await page.locator("details").first().getAttribute("open"), "");
+await page.setViewportSize({ width: 390, height: 844 });
+for (const path of ["/", "/evidence/", "/articles/cryotherapy/", "/search/"]) {
+  await page.goto(origin + path);
+  await page.waitForLoadState("networkidle");
+  assert(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+    `Overflow ${path}`,
+  );
+}
+await page.goto(origin + "/");
+await page.getByRole("button", { name: "メニュー" }).click();
+assert.equal(
+  await page
+    .getByRole("button", { name: "メニュー" })
+    .getAttribute("aria-expanded"),
+  "true",
+);
+await page.getByRole("button", { name: "メニュー" }).click();
+await page.screenshot({ path: out + "/home-mobile.png", fullPage: true });
 // Validate local routes and same-page anchors in generated HTML, including OG asset.
-function htmlFiles(dir){return readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?htmlFiles(dir+'/'+e.name):e.name.endsWith('.html')?[dir+'/'+e.name]:[])}
-for(const file of htmlFiles('dist')){const html=readFileSync(file,'utf8');for(const [,href]of html.matchAll(/href="([^"<>]+)"/g)){if(href.startsWith('/')&&!href.startsWith('//')){const path=decodeURIComponent(href.split('#')[0].split('?')[0]);assert(existsSync('dist'+path)||existsSync('dist'+path+'/index.html'),`${file}: broken ${href}`)}if(href.startsWith('#'))assert(html.includes(`id="${href.slice(1)}"`),`${file}: missing anchor ${href}`)}}
-assert(existsSync('dist/og.png'));assert.deepEqual(errors,[]);writeFileSync(out+'/browser-results.json',JSON.stringify({results,errors,checks:['Japanese and English full text search','empty state','combined evidence filters and reset','case disclosure','mobile menu','mobile overflow','internal links and anchors']},null,2));console.log(JSON.stringify(results,null,2));await browser.close();assert(results.every(r=>r.violations.length===0),'Accessibility violations');console.log('Browser checks passed');
+function htmlFiles(dir) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory()
+      ? htmlFiles(dir + "/" + e.name)
+      : e.name.endsWith(".html")
+        ? [dir + "/" + e.name]
+        : [],
+  );
+}
+for (const file of htmlFiles("dist")) {
+  const html = readFileSync(file, "utf8");
+  for (const [, href] of html.matchAll(/href="([^"<>]+)"/g)) {
+    if (href.startsWith("/") && !href.startsWith("//")) {
+      const path = decodeURIComponent(href.split("#")[0].split("?")[0]);
+      assert(
+        existsSync("dist" + path) || existsSync("dist" + path + "/index.html"),
+        `${file}: broken ${href}`,
+      );
+    }
+    if (href.startsWith("#"))
+      assert(
+        html.includes(`id="${href.slice(1)}"`),
+        `${file}: missing anchor ${href}`,
+      );
+  }
+}
+assert(existsSync("dist/og.png"));
+assert.deepEqual(errors, []);
+writeFileSync(
+  out + "/browser-results.json",
+  JSON.stringify(
+    {
+      results,
+      errors,
+      checks: [
+        "Japanese and English full text search",
+        "empty state",
+        "combined evidence filters and reset",
+        "case disclosure",
+        "mobile menu",
+        "mobile overflow",
+        "internal links and anchors",
+      ],
+    },
+    null,
+    2,
+  ),
+);
+console.log(JSON.stringify(results, null, 2));
+await browser.close();
+assert(
+  results.every((r) => r.violations.length === 0),
+  "Accessibility violations",
+);
+console.log("Browser checks passed");

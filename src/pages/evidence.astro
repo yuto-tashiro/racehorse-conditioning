@@ -1,8 +1,188 @@
 ---
-import Base from '../layouts/Base.astro';import {getCollection} from 'astro:content';import {levels} from '../lib/evidence';
-const refs=(await getCollection('evidence')).sort((a,b)=>b.data.year-a.data.year);const fields=[['regions','身体部位'],['conditions','障害'],['interventions','介入'],['species','Species'],['study_design','研究デザイン'],['evidence_level','Evidence Level'],['year','年'],['journal','雑誌・資料']] as const;
-const values=(key:typeof fields[number][0])=>Array.from(new Set(refs.flatMap(r=>{const v=r.data[key];return Array.isArray(v)?v:[String(v)]}))).sort();
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { levels } from "../lib/evidence";
+const refs = (await getCollection("evidence")).sort(
+  (a, b) => b.data.year - a.data.year,
+);
+const fields = [
+  ["regions", "身体部位"],
+  ["conditions", "障害"],
+  ["interventions", "介入"],
+  ["species", "Species"],
+  ["study_design", "研究デザイン"],
+  ["evidence_level", "Evidence Level"],
+  ["year", "年"],
+  ["journal", "雑誌・資料"],
+] as const;
+const values = (key: (typeof fields)[number][0]) =>
+  Array.from(
+    new Set(
+      refs.flatMap((r) => {
+        const v = r.data[key];
+        return Array.isArray(v) ? v : [String(v)];
+      }),
+    ),
+  ).sort();
 ---
-<Base title="Evidence Library" description="馬のコンディショニングに関する論文を、対象種・研究デザイン・アウトカム・研究上の限界から調べる。"><div class="wrap section"><div class="page-title"><span class="eyebrow">FOLLOW THE EVIDENCE</span><h1>Evidence Library</h1><p>研究が測ったこと、まだ分からないこと。原著・総説・専門機関の資料を分けて読み解く。</p></div><div class="note">各カードのLevelは登録対象のアウトカムに関する暫定評価です。雑誌や論文そのものの格付け、専門家による監修済み評価ではありません。<a href="/evidence-guide/">評価方法を読む →</a></div><form class="filters" id="filters" role="search" aria-label="文献の絞り込み"><label style="grid-column:1/-1">キーワード<input type="search" id="query" placeholder="タイトル、著者、PMID、DOI、アウトカム"/></label>{fields.map(([key,label])=><label>{label}<select name={key}><option value="">すべて</option>{values(key).map(v=><option value={v}>{v}</option>)}</select></label>)}<button type="reset" class="button secondary">絞り込みを解除</button></form><p class="count" id="result-count" role="status" aria-live="polite">{refs.length}件の資料</p><div id="evidence-list">{refs.map(r=><article class="library-card" id={r.id} data-record={JSON.stringify(r.data)}><div class="claim-meta"><span class={`tag level-${r.data.evidence_level}`}>{r.data.evidence_level} — {levels[r.data.evidence_level]}</span> <span class="eyebrow">{r.data.year} / {r.data.study_design}</span></div><h2 style="margin-top:14px"><a href={r.data.url}>{r.data.title} ↗</a></h2><p>{r.data.authors.join(', ')} · {r.data.journal}</p><div class="details-grid"><div><span class="eyebrow">SPECIES / POPULATION</span><p>{r.data.species.join(' / ')}<br/>{r.data.population}<br/>Sample size: {r.data.sample_size??'未確認 / 該当なし'}</p></div><div><span class="eyebrow">OUTCOMES</span><p>{r.data.outcomes.join(' / ')}<br/>{r.data.main_findings}</p></div></div><p class="note"><strong>限界：</strong>{r.data.limitations}</p><details><summary>研究の詳細・識別子を表示</summary><p>介入：{r.data.intervention}<br/>比較：{r.data.comparison}</p>{r.data.pmid&&<p><a href={`https://pubmed.ncbi.nlm.nih.gov/${r.data.pmid}/`}>PMID: {r.data.pmid}</a></p>}{r.data.doi&&<p><a href={`https://doi.org/${r.data.doi}`}>DOI: {r.data.doi}</a></p>}<p>確認：{r.data.verification} / {r.data.reviewed_by}<br/>Last Evidence Review: {r.data.last_reviewed}</p></details></article>)}</div><p class="no-results" id="no-results" hidden>条件に一致する文献はありません。絞り込み条件を減らしてお試しください。</p></div><script>
-const form=document.querySelector<HTMLFormElement>('#filters')!;const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-record]'));function update(){const q=(document.querySelector<HTMLInputElement>('#query')!.value).normalize('NFKC').toLowerCase().trim();const filters=Array.from(form.querySelectorAll('select'));let count=0;for(const card of cards){const data:Record<string,unknown>=JSON.parse(card.dataset.record!);const match=JSON.stringify(data).normalize('NFKC').toLowerCase().includes(q)&&filters.every(f=>!f.value||(Array.isArray(data[f.name])?(data[f.name] as string[]).includes(f.value):String(data[f.name])===f.value));card.hidden=!match;if(match)count++}document.querySelector('#result-count')!.textContent=`${count}件の資料`;document.querySelector<HTMLElement>('#no-results')!.hidden=count>0;}form.addEventListener('input',update);form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('reset',()=>setTimeout(update,0));
-</script></Base>
+
+<Base
+  title="Evidence Library"
+  description="馬のコンディショニングに関する論文を、対象種・研究デザイン・アウトカム・研究上の限界から調べる。"
+>
+  <div class="wrap section">
+    <div class="page-title">
+      <span class="eyebrow">FOLLOW THE EVIDENCE</span>
+      <h1>Evidence Library</h1>
+      <p>
+        研究が測ったこと、まだ分からないこと。原著・総説・専門機関の資料を分けて読み解く。
+      </p>
+    </div>
+    <div class="note">
+      各カードのLevelは登録対象のアウトカムに関する暫定評価です。雑誌や論文そのものの格付け、専門家による監修済み評価ではありません。
+      <a href="/evidence-guide/">評価方法を読む →</a>
+    </div>
+    <form
+      class="filters"
+      id="filters"
+      role="search"
+      aria-label="文献の絞り込み"
+    >
+      <label style="grid-column:1/-1">
+        キーワード
+        <input
+          type="search"
+          id="query"
+          placeholder="タイトル、著者、PMID、DOI、アウトカム"
+        />
+      </label>
+      {fields.map(([key, label]) => (
+        <label>
+          {label}
+          <select name={key}>
+            <option value="">すべて</option>
+            {values(key).map((v) => (
+              <option value={v}>{v}</option>
+            ))}
+          </select>
+        </label>
+      ))}
+      <button type="reset" class="button secondary">
+        絞り込みを解除
+      </button>
+    </form>
+    <p class="count" id="result-count" role="status" aria-live="polite">
+      {refs.length}件の資料
+    </p>
+    <div id="evidence-list">
+      {refs.map((r) => (
+        <article
+          class="library-card"
+          id={r.id}
+          data-record={JSON.stringify(r.data)}
+        >
+          <div class="claim-meta">
+            <span class={`tag level-${r.data.evidence_level}`}>
+              {r.data.evidence_level} — {levels[r.data.evidence_level]}
+            </span>{" "}
+            <span class="eyebrow">
+              {r.data.year} / {r.data.study_design}
+            </span>
+          </div>
+          <h2 style="margin-top:14px">
+            <a href={r.data.url}>{r.data.title} ↗</a>
+          </h2>
+          <p>
+            {r.data.authors.join(", ")} · {r.data.journal}
+          </p>
+          <div class="details-grid">
+            <div>
+              <span class="eyebrow">SPECIES / POPULATION</span>
+              <p>
+                {r.data.species.join(" / ")}
+                <br />
+                {r.data.population}
+                <br />
+                Sample size: {r.data.sample_size ?? "未確認 / 該当なし"}
+              </p>
+            </div>
+            <div>
+              <span class="eyebrow">OUTCOMES</span>
+              <p>
+                {r.data.outcomes.join(" / ")}
+                <br />
+                {r.data.main_findings}
+              </p>
+            </div>
+          </div>
+          <p class="note">
+            <strong>限界：</strong>
+            {r.data.limitations}
+          </p>
+          <details>
+            <summary>研究の詳細・識別子を表示</summary>
+            <p>
+              介入：{r.data.intervention}
+              <br />
+              比較：{r.data.comparison}
+            </p>
+            {r.data.pmid && (
+              <p>
+                <a href={`https://pubmed.ncbi.nlm.nih.gov/${r.data.pmid}/`}>
+                  PMID: {r.data.pmid}
+                </a>
+              </p>
+            )}
+            {r.data.doi && (
+              <p>
+                <a href={`https://doi.org/${r.data.doi}`}>DOI: {r.data.doi}</a>
+              </p>
+            )}
+            <p>
+              確認：{r.data.verification} / {r.data.reviewed_by}
+              <br />
+              Last Evidence Review: {r.data.last_reviewed}
+            </p>
+          </details>
+        </article>
+      ))}
+    </div>
+    <p class="no-results" id="no-results" hidden>
+      条件に一致する文献はありません。絞り込み条件を減らしてお試しください。
+    </p>
+  </div>
+  <script>
+    const form = document.querySelector<HTMLFormElement>("#filters")!;
+    const cards = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-record]"),
+    );
+    function update() {
+      const q = document
+        .querySelector<HTMLInputElement>("#query")!
+        .value.normalize("NFKC")
+        .toLowerCase()
+        .trim();
+      const filters = Array.from(form.querySelectorAll("select"));
+      let count = 0;
+      for (const card of cards) {
+        const data: Record<string, unknown> = JSON.parse(card.dataset.record!);
+        const match =
+          JSON.stringify(data).normalize("NFKC").toLowerCase().includes(q) &&
+          filters.every(
+            (f) =>
+              !f.value ||
+              (Array.isArray(data[f.name])
+                ? (data[f.name] as string[]).includes(f.value)
+                : String(data[f.name]) === f.value),
+          );
+        card.hidden = !match;
+        if (match) count++;
+      }
+      document.querySelector("#result-count")!.textContent = `${count}件の資料`;
+      document.querySelector<HTMLElement>("#no-results")!.hidden = count > 0;
+    }
+    form.addEventListener("input", update);
+    form.addEventListener("submit", (e) => e.preventDefault());
+    form.addEventListener("reset", () => setTimeout(update, 0));
+  </script>
+</Base>

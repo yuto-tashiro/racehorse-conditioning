@@ -1,6 +1,37 @@
 ---
-import Base from '../../layouts/Base.astro';import ArticleCard from '../../components/ArticleCard.astro';import {categories} from '../../lib/evidence';import {getCollection} from 'astro:content';
-export function getStaticPaths(){return Object.entries(categories).map(([category,cat])=>({params:{category},props:{cat}}))}
-const {cat}=Astro.props;const entries=(await getCollection('articles')).filter(a=>a.data.category===Astro.params.category).sort((a,b)=>a.data.order-b.data.order);
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { categories } from "../../lib/evidence";
+import { getCollection } from "astro:content";
+export function getStaticPaths() {
+  return Object.entries(categories).map(([category, cat]) => ({
+    params: { category },
+    props: { cat },
+  }));
+}
+const { cat } = Astro.props;
+const entries = (await getCollection("articles"))
+  .filter((a) => a.data.category === Astro.params.category)
+  .sort((a, b) => a.data.order - b.data.order);
 ---
-<Base title={cat.title} description={cat.summary}><div class="wrap"><div class="breadcrumb"><a href="/">ホーム</a> / {cat.title}</div><div class="page-title"><span class="eyebrow">{cat.english}</span><h1>{cat.title}</h1><p>{cat.summary}</p></div><p class="count">{entries.length} ARTICLES · 日本語と英語の専門用語を併記しています</p><div class="grid" style="padding-bottom:60px">{entries.map(entry=><ArticleCard entry={entry}/>)}</div></div></Base>
+
+<Base title={cat.title} description={cat.summary}>
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="/">ホーム</a> / {cat.title}
+    </div>
+    <div class="page-title">
+      <span class="eyebrow">{cat.english}</span>
+      <h1>{cat.title}</h1>
+      <p>{cat.summary}</p>
+    </div>
+    <p class="count">
+      {entries.length} ARTICLES · 日本語と英語の専門用語を併記しています
+    </p>
+    <div class="grid" style="padding-bottom:60px">
+      {entries.map((entry) => (
+        <ArticleCard entry={entry} />
+      ))}
+    </div>
+  </div>
+</Base>

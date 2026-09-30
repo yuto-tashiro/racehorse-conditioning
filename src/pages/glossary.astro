@@ -1,4 +1,67 @@
 ---
-import Base from '../layouts/Base.astro';const terms=[['SDFT / 浅指屈筋腱','Superficial Digital Flexor Tendon。力の伝達と弾性エネルギー蓄積に関わる腱。','sdft'],['DDFT / 深指屈筋腱','Deep Digital Flexor Tendon。SDFTとは別の屈筋腱。','ddft'],['Suspensory Ligament / 繋靱帯','球節を支える支持機構の一部。','suspensory'],['Stance / 支持期','蹄が地面に接している時間。','gallop'],['Swing / 遊脚期','肢が空中を移動している時間。','gallop'],['Tendon Strain / 腱のひずみ','元の長さに対する伸びの割合。','gallop'],['External Load / 外的負荷','距離・速度・時間など、実施した運動の量と内容。','training-load'],['Internal Load / 内的負荷','運動に対する心拍・乳酸などの生体反応。','training-load'],['V200','心拍数200拍/分に対応する速度。','heart-rate'],['Outcome / アウトカム','研究や評価で測定・判定する結果。','cryotherapy'],['CRET','Capacitive Resistive Electric Transfer。ラジオ波を利用する介入。','radiofrequency'],['EIPH','Exercise-Induced Pulmonary Hemorrhage。運動誘発性肺出血。','eiph'],['EGUS','Equine Gastric Ulcer Syndrome。馬胃潰瘍症候群。','gastric-ulcers'],['Return to Training / 調教復帰','段階的に調教へ戻る過程。競走復帰とは区別する。','controlled-exercise']];
+import Base from "../layouts/Base.astro";
+const terms = [
+  [
+    "SDFT / 浅指屈筋腱",
+    "Superficial Digital Flexor Tendon。力の伝達と弾性エネルギー蓄積に関わる腱。",
+    "sdft",
+  ],
+  [
+    "DDFT / 深指屈筋腱",
+    "Deep Digital Flexor Tendon。SDFTとは別の屈筋腱。",
+    "ddft",
+  ],
+  [
+    "Suspensory Ligament / 繋靱帯",
+    "球節を支える支持機構の一部。",
+    "suspensory",
+  ],
+  ["Stance / 支持期", "蹄が地面に接している時間。", "gallop"],
+  ["Swing / 遊脚期", "肢が空中を移動している時間。", "gallop"],
+  ["Tendon Strain / 腱のひずみ", "元の長さに対する伸びの割合。", "gallop"],
+  [
+    "External Load / 外的負荷",
+    "距離・速度・時間など、実施した運動の量と内容。",
+    "training-load",
+  ],
+  [
+    "Internal Load / 内的負荷",
+    "運動に対する心拍・乳酸などの生体反応。",
+    "training-load",
+  ],
+  ["V200", "心拍数200拍/分に対応する速度。", "heart-rate"],
+  ["Outcome / アウトカム", "研究や評価で測定・判定する結果。", "cryotherapy"],
+  [
+    "CRET",
+    "Capacitive Resistive Electric Transfer。ラジオ波を利用する介入。",
+    "radiofrequency",
+  ],
+  ["EIPH", "Exercise-Induced Pulmonary Hemorrhage。運動誘発性肺出血。", "eiph"],
+  ["EGUS", "Equine Gastric Ulcer Syndrome。馬胃潰瘍症候群。", "gastric-ulcers"],
+  [
+    "Return to Training / 調教復帰",
+    "段階的に調教へ戻る過程。競走復帰とは区別する。",
+    "controlled-exercise",
+  ],
+];
 ---
-<Base title="日本語・英語用語集"><div class="wrap section" style="max-width:940px"><div class="page-title"><span class="eyebrow">GLOSSARY</span><h1>専門用語を、つながる言葉に。</h1><p>日本語・英語・略語を対応させ、関連する学習記事へ進めます。</p></div><dl class="glossary">{terms.map(([term,description,id])=><><dt>{term}</dt><dd>{description} <a href={`/articles/${id}/`}>記事を読む →</a></dd></>)}</dl></div></Base>
+
+<Base title="日本語・英語用語集">
+  <div class="wrap section" style="max-width:940px">
+    <div class="page-title">
+      <span class="eyebrow">GLOSSARY</span>
+      <h1>専門用語を、つながる言葉に。</h1>
+      <p>日本語・英語・略語を対応させ、関連する学習記事へ進めます。</p>
+    </div>
+    <dl class="glossary">
+      {terms.map(([term, description, id]) => (
+        <>
+          <dt>{term}</dt>
+          <dd>
+            {description} <a href={`/articles/${id}/`}>記事を読む →</a>
+          </dd>
+        </>
+      ))}
+    </dl>
+  </div>
+</Base>
