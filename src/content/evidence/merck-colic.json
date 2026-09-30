@@ -1,0 +1,36 @@
+{
+  "title": "Colic in Horses",
+  "authors": [
+    "James N. Moore"
+  ],
+  "year": 2026,
+  "journal": "Merck Veterinary Manual",
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.merckvetmanual.com/horse-owners/digestive-disorders-of-horses/colic-in-horses",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "馬に関する教育資料",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "基礎・評価の解説",
+  "comparison": "該当なし",
+  "outcomes": [
+    "基礎知識"
+  ],
+  "main_findings": "腹痛の原因と獣医師による評価に必要な病歴を説明する。",
+  "limitations": "一次比較研究ではない。個々の診療判断を代替しない。",
+  "evidence_tags": [
+    "教育資料"
+  ],
+  "regions": [
+    "消化器"
+  ],
+  "conditions": [],
+  "interventions": [],
+  "evidence_level": "D",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "INSTITUTIONAL"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "European College of Equine Internal Medicine Consensus Statement--Equine Gastric Ulcer Syndrome in Adult Horses",
+  "authors": [
+    "Sykes BW",
+    "Hewetson M",
+    "Hepburn RJ",
+    "Luthersson N",
+    "Tamzali Y"
+  ],
+  "year": 2015,
+  "journal": "Journal of veterinary internal medicine",
+  "doi": "10.1111/jvim.13578",
+  "pmid": "26340142",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/26340142/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "成馬の胃潰瘍症候群",
+  "sample_size": null,
+  "study_design": "CONSENSUS",
+  "intervention": "診断・管理",
+  "comparison": "統一された比較試験ではない",
+  "outcomes": [
+    "ESGD",
+    "EGGD"
+  ],
+  "main_findings": "胃の非腺部と腺部を分けて理解する合意声明。",
+  "limitations": "2015年の声明。病型や介入ごとの根拠の強さは同一ではない。",
+  "evidence_tags": [
+    "ESGD",
+    "EGGD"
+  ],
+  "regions": [
+    "消化器"
+  ],
+  "conditions": [
+    "胃潰瘍"
+  ],
+  "interventions": [],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

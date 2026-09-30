@@ -1,0 +1,42 @@
+{
+  "title": "Consensus for the General Use of Equine Water Treadmills for Healthy Horses",
+  "authors": [
+    "Nankervis K",
+    "Tranquille C",
+    "McCrae P",
+    "et al."
+  ],
+  "year": 2021,
+  "journal": "Animals",
+  "doi": "10.3390/ani11020305",
+  "pmid": null,
+  "url": "https://www.mdpi.com/2076-2615/11/2/305",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "健康馬の水中トレッドミル利用",
+  "sample_size": null,
+  "study_design": "CONSENSUS",
+  "intervention": "Water Treadmill",
+  "comparison": "比較試験ではない",
+  "outcomes": [
+    "水深・速度・時間の設定"
+  ],
+  "main_findings": "健康馬への導入と運動の観察に関する合意を整理する。",
+  "limitations": "健康馬を対象とした合意であり、傷害馬への処方や競走復帰効果を証明しない。",
+  "evidence_tags": [
+    "機能回復",
+    "再受傷"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Water Treadmill"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

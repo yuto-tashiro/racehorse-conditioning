@@ -1,0 +1,6 @@
+---
+import type {CollectionEntry} from 'astro:content';
+import {categories} from '../lib/evidence';
+const {entry}=Astro.props as {entry:CollectionEntry<'articles'>};
+---
+<a class="article-card" href={`/articles/${entry.id}/`}><span class="eyebrow">{categories[entry.data.category].english}</span><h3>{entry.data.title}</h3><p>{entry.data.description}</p><div class="meta"><span>{entry.data.english}</span><span aria-hidden="true">→</span></div></a>

@@ -1,0 +1,42 @@
+{
+  "title": "Microdamage in the equine superficial digital flexor tendon",
+  "authors": [
+    "O'Brien C",
+    "Marr N",
+    "Thorpe C"
+  ],
+  "year": 2021,
+  "journal": "Equine veterinary journal",
+  "doi": "10.1111/evj.13331",
+  "pmid": "32772396",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32772396/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "馬の浅指屈筋腱",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "負荷と微小損傷",
+  "comparison": "比較試験ではない",
+  "outcomes": [
+    "微小損傷",
+    "腱の変性"
+  ],
+  "main_findings": "蓄積する微小損傷を機械的・熱的な負荷の観点から整理した。",
+  "limitations": "総説。早期所見から個体の損傷発生を確実に予測できるとはいえない。",
+  "evidence_tags": [
+    "微小損傷",
+    "腱の変性"
+  ],
+  "regions": [
+    "前肢"
+  ],
+  "conditions": [
+    "屈腱炎"
+  ],
+  "interventions": [],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

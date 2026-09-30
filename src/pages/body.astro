@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/Base.astro';import {getCollection} from 'astro:content';import ArticleCard from '../components/ArticleCard.astro';const all=await getCollection('articles');const regions=['前肢','後肢','蹄','背部','骨盤','呼吸器','循環器','消化器','全身'];
+---
+<Base title="身体部位から学ぶ"><div class="wrap section"><div class="page-title"><span class="eyebrow">ANATOMY NAVIGATOR</span><h1>身体部位から、知識をつなぐ。</h1><p>構造から傷害・評価・コンディショニングまで、同じ部位に関わる記事を横断できます。</p></div><nav class="region-grid" aria-label="身体部位">{regions.map((r,i)=><a href={`#region-${i}`}>{r}<span>↓</span></a>)}</nav>{regions.map((region,i)=><section class="section" id={`region-${i}`}><div class="section-head"><h2>{region}</h2><span class="count">{all.filter(a=>a.data.region.includes(region)).length} ARTICLES</span></div><div class="grid">{all.filter(a=>a.data.region.includes(region)).map(entry=><ArticleCard entry={entry}/>)}</div></section>)}</div></Base>

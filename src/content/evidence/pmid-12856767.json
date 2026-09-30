@@ -1,0 +1,45 @@
+{
+  "title": "Influence of topically applied cold treatment on core temperature and cell viability in equine superficial digital flexor tendons",
+  "authors": [
+    "Petrov R",
+    "MacDonald MH",
+    "Tesch AM",
+    "Van Hoogmoed LM"
+  ],
+  "year": 2003,
+  "journal": "American journal of veterinary research",
+  "doi": "10.2460/ajvr.2003.64.835",
+  "pmid": "12856767",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/12856767/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "鎮静下の成馬5頭6肢と、別の3頭から採取した培養腱細胞",
+  "sample_size": 5,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "局所冷却",
+  "comparison": "冷却前および非冷却培養細胞",
+  "outcomes": [
+    "SDFT深部温度",
+    "培養細胞生存性"
+  ],
+  "main_findings": "局所冷却に伴う腱深部温度の低下を報告した。",
+  "limitations": "傷害馬の治癒、競走復帰期間、再発率は評価していない。",
+  "evidence_tags": [
+    "SDFT深部温度",
+    "培養細胞生存性"
+  ],
+  "regions": [
+    "前肢"
+  ],
+  "conditions": [
+    "屈腱炎"
+  ],
+  "interventions": [
+    "Cryotherapy"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

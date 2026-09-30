@@ -1,0 +1,45 @@
+{
+  "title": "Guidelines for Formulating Rehabilitation Strategies for Equine Tendon and Ligament Injuries",
+  "authors": [
+    "Ellis KL",
+    "Giancola S"
+  ],
+  "year": 2025,
+  "journal": "The Veterinary clinics of North America. Equine practice",
+  "doi": "10.1016/j.cveq.2025.04.010",
+  "pmid": "40517027",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40517027/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "腱・靱帯損傷のある馬",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "リハビリテーション",
+  "comparison": "比較試験ではない",
+  "outcomes": [
+    "機能回復",
+    "再受傷"
+  ],
+  "main_findings": "個体ごとに運動、疼痛、可動域、神経筋機能を組み合わせた計画を論じる。",
+  "limitations": "総説であり、単一プロトコルの競走復帰効果を検証した試験ではない。",
+  "evidence_tags": [
+    "機能回復",
+    "再受傷"
+  ],
+  "regions": [
+    "前肢",
+    "後肢"
+  ],
+  "conditions": [
+    "屈腱炎",
+    "靱帯損傷"
+  ],
+  "interventions": [
+    "Controlled Exercise"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

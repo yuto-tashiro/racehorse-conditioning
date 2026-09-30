@@ -1,0 +1,39 @@
+{
+  "title": "Muscle-tendon stresses and elastic energy storage during locomotion in the horse",
+  "authors": [
+    "Biewener AA"
+  ],
+  "year": 1998,
+  "journal": "Comparative biochemistry and physiology. Part B, Biochemistry & molecular biology",
+  "doi": "10.1016/s0305-0491(98)00024-8",
+  "pmid": "9787779",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/9787779/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "運動中の馬（頭数は本登録で未確認）",
+  "sample_size": null,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "歩様・速度の変化",
+  "comparison": "異なる歩様と速度",
+  "outcomes": [
+    "筋腱応力",
+    "弾性エネルギー"
+  ],
+  "main_findings": "床反力と運動学から、腱のエネルギー蓄積を推定した。",
+  "limitations": "計算による推定であり、計測速度を超えた競走速度や個体の損傷閾値へ直接外挿できない。",
+  "evidence_tags": [
+    "筋腱応力",
+    "弾性エネルギー"
+  ],
+  "regions": [
+    "前肢",
+    "後肢"
+  ],
+  "conditions": [],
+  "interventions": [],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

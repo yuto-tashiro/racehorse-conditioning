@@ -1,0 +1,46 @@
+{
+  "title": "Bone fatigue and its implications for injuries in racehorses",
+  "authors": [
+    "Martig S",
+    "Chen W",
+    "Lee PV",
+    "Whitton RC"
+  ],
+  "year": 2014,
+  "journal": "Equine veterinary journal",
+  "doi": "10.1111/evj.12241",
+  "pmid": "24528139",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/24528139/",
+  "species": [
+    "THOROUGHBRED"
+  ],
+  "population": "競走馬の骨",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "反復する高速運動",
+  "comparison": "比較試験ではない",
+  "outcomes": [
+    "骨疲労",
+    "リモデリング"
+  ],
+  "main_findings": "微小損傷の蓄積と修復の不均衡を骨疲労の中心として論じる。",
+  "limitations": "休養と高速運動の最適配分や個体の安全閾値には不確実性がある。",
+  "evidence_tags": [
+    "骨疲労",
+    "リモデリング"
+  ],
+  "regions": [
+    "前肢",
+    "後肢"
+  ],
+  "conditions": [
+    "骨疲労"
+  ],
+  "interventions": [
+    "Training Load"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

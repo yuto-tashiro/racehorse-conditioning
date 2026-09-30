@@ -1,0 +1,46 @@
+{
+  "title": "Effects of low- and moderate-intensity training on metabolic responses to exercise in thoroughbreds",
+  "authors": [
+    "Eaton MD",
+    "Hodgson DR",
+    "Evans DL",
+    "Rose RJ"
+  ],
+  "year": 1999,
+  "journal": "Equine veterinary journal. Supplement",
+  "doi": "10.1111/j.2042-3306.1999.tb05277.x",
+  "pmid": "10659311",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/10659311/",
+  "species": [
+    "THOROUGHBRED"
+  ],
+  "population": "休養後のサラブレッド10頭",
+  "sample_size": 10,
+  "study_design": "RANDOMIZED_TRIAL",
+  "intervention": "9週間の低・中強度トレーニング",
+  "comparison": "低強度群と中強度群",
+  "outcomes": [
+    "V200",
+    "乳酸",
+    "酸素摂取量"
+  ],
+  "main_findings": "運動試験で測る複数の生理指標にトレーニング後の変化を報告。",
+  "limitations": "小規模かつ特定の条件。個体の障害リスクや最適処方を決定する指標ではない。",
+  "evidence_tags": [
+    "V200",
+    "乳酸",
+    "酸素摂取量"
+  ],
+  "regions": [
+    "循環器",
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Training Load"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

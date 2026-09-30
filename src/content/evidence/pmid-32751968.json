@@ -1,0 +1,49 @@
+{
+  "title": "Effects of High Intensity Laser Therapy in the Treatment of Tendon and Ligament Injuries in Performance Horses",
+  "authors": [
+    "Zielińska P",
+    "Nicpoń J",
+    "Kiełbowicz Z",
+    "Soroko M",
+    "Dudek K",
+    "Zaborski D"
+  ],
+  "year": 2020,
+  "journal": "Animals : an open access journal from MDPI",
+  "doi": "10.3390/ani10081327",
+  "pmid": "32751968",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32751968/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "腱・靱帯傷害のある運動馬26頭",
+  "sample_size": 26,
+  "study_design": "RANDOMIZED_TRIAL",
+  "intervention": "高強度レーザー（HILT）",
+  "comparison": "同じリハビリを受ける非照射群",
+  "outcomes": [
+    "疼痛",
+    "腫脹",
+    "跛行",
+    "超音波所見"
+  ],
+  "main_findings": "疼痛・腫脹・跛行と病変割合の改善を報告。一方、エコー輝度の変化には有意な群間差を認めなかった。",
+  "limitations": "小規模かつ短期間。長期の再発率、競走復帰、すべてのレーザー条件への一般化はできない。",
+  "evidence_tags": [
+    "疼痛",
+    "腫脹",
+    "跛行",
+    "超音波所見"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Laser"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

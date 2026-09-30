@@ -1,0 +1,46 @@
+{
+  "title": "Equine Rehabilitation: A Scoping Review of the Literature",
+  "authors": [
+    "Atalaia T",
+    "Prazeres J",
+    "Abrantes J",
+    "Clayton HM"
+  ],
+  "year": 2021,
+  "journal": "Animals : an open access journal from MDPI",
+  "doi": "10.3390/ani11061508",
+  "pmid": "34067449",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/34067449/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "馬のリハビリテーション文献（スコーピングレビュー）",
+  "sample_size": null,
+  "study_design": "SYSTEMATIC_REVIEW",
+  "intervention": "運動・物理療法・水治療等",
+  "comparison": "文献ごとに異なる",
+  "outcomes": [
+    "研究分布",
+    "リハビリテーション"
+  ],
+  "main_findings": "対象文献に総説と観察研究が多く、介入条件・転帰の情報不足を指摘。",
+  "limitations": "スコーピングレビューであり、個別介入の統合効果量を算出していない。",
+  "evidence_tags": [
+    "研究分布",
+    "リハビリテーション"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "ESWT",
+    "Laser",
+    "Swimming",
+    "Water Treadmill"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "In vivo effects of cold therapy and bandaging on core temperatures of equine superficial and deep digital flexor tendons",
+  "authors": [
+    "McCarthy RD",
+    "Ordóñez HJ",
+    "Semevolos SA"
+  ],
+  "year": 2025,
+  "journal": "Veterinary surgery : VS",
+  "doi": "10.1111/vsu.14235",
+  "pmid": "39996479",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/39996479/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "鎮静下の正常馬6頭の左右前肢",
+  "sample_size": 6,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "圧迫冷却・アイスブーツ・包帯",
+  "comparison": "左右肢で異なる冷却法",
+  "outcomes": [
+    "SDFT・DDFT深部温度"
+  ],
+  "main_findings": "冷却法によって温度低下が異なり、包帯後には温度上昇が観察された。",
+  "limitations": "正常馬の短時間の温度測定であり、組織修復・競走復帰を評価していない。",
+  "evidence_tags": [
+    "SDFT・DDFT深部温度"
+  ],
+  "regions": [
+    "前肢"
+  ],
+  "conditions": [
+    "屈腱炎"
+  ],
+  "interventions": [
+    "Cryotherapy"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

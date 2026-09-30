@@ -1,0 +1,47 @@
+{
+  "title": "Heat stress in horses: a literature review",
+  "authors": [
+    "Kang H",
+    "Zsoldos RR",
+    "Sole-Guitart A",
+    "Narayan E",
+    "Cawdell-Smith AJ",
+    "Gaughan JB"
+  ],
+  "year": 2023,
+  "journal": "International journal of biometeorology",
+  "doi": "10.1007/s00484-023-02467-7",
+  "pmid": "37060454",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37060454/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "暑熱環境・運動時の馬",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "暑熱管理・冷却",
+  "comparison": "文献ごとに異なる",
+  "outcomes": [
+    "体温",
+    "熱放散"
+  ],
+  "main_findings": "熱の蓄積と放散、早期発見と冷却を整理した総説。",
+  "limitations": "測定法や環境条件が異なり、単一の温度値だけで重症度を判断できない。",
+  "evidence_tags": [
+    "体温",
+    "熱放散"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [
+    "暑熱障害"
+  ],
+  "interventions": [
+    "Cooling"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

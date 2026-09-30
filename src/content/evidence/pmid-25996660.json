@@ -1,0 +1,46 @@
+{
+  "title": "Exercise induced pulmonary hemorrhage in horses: American College of Veterinary Internal Medicine consensus statement",
+  "authors": [
+    "Hinchcliff KW",
+    "Couetil LL",
+    "Knight PK",
+    "Morley PS",
+    "Robinson NE",
+    "Sweeney CR",
+    "van Erck E"
+  ],
+  "year": 2015,
+  "journal": "Journal of veterinary internal medicine",
+  "doi": "10.1111/jvim.12593",
+  "pmid": "25996660",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/25996660/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "EIPHに関する馬の公表研究",
+  "sample_size": null,
+  "study_design": "CONSENSUS",
+  "intervention": "EIPHの評価と介入",
+  "comparison": "文献ごとに異なる",
+  "outcomes": [
+    "競走能力",
+    "肺病変"
+  ],
+  "main_findings": "EIPHを疾病として扱い、重症度や競走能力との関係を検討した。",
+  "limitations": "多くの研究に質や検出力の限界があり、管理法の根拠を一括評価できない。",
+  "evidence_tags": [
+    "競走能力",
+    "肺病変"
+  ],
+  "regions": [
+    "呼吸器"
+  ],
+  "conditions": [
+    "EIPH"
+  ],
+  "interventions": [],
+  "evidence_level": "B",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

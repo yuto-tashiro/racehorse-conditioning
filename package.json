@@ -1,0 +1,34 @@
+{
+  "name": "racehorse-conditioning-science",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "typecheck": "astro check",
+    "test": "vitest run",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview --host 127.0.0.1",
+    "deploy": "npm run build && wrangler deploy",
+    "test:browser": "node scripts/verify-site.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.2",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.5",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "lighthouse": "^13.5.0",
+    "pagefind": "^1.5.2",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.144.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

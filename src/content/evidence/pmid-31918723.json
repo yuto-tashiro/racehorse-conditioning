@@ -1,0 +1,47 @@
+{
+  "title": "Capacitive resistive electric transfer modifies gait pattern in horses exercised on a treadmill",
+  "authors": [
+    "Becero M",
+    "Saitua A",
+    "Argüelles D",
+    "Sánchez de Medina AL",
+    "Castejón-Riber C",
+    "Riber C",
+    "Muñoz A"
+  ],
+  "year": 2020,
+  "journal": "BMC veterinary research",
+  "doi": "10.1186/s12917-020-2233-x",
+  "pmid": "31918723",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/31918723/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "トレッドミルで運動する馬9頭",
+  "sample_size": 9,
+  "study_design": "CONTROLLED_TRIAL",
+  "intervention": "CRET",
+  "comparison": "同じ馬への後日のsham処置",
+  "outcomes": [
+    "歩幅",
+    "歩様の規則性"
+  ],
+  "main_findings": "定速の常歩・速歩で加速度指標と歩幅の変化を報告した。",
+  "limitations": "小規模、処置順序の影響。競走成績・治癒・再発率を測定していない。",
+  "evidence_tags": [
+    "歩幅",
+    "歩様の規則性"
+  ],
+  "regions": [
+    "背部",
+    "骨盤"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Radiofrequency"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

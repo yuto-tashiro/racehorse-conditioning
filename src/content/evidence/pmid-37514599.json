@@ -1,0 +1,41 @@
+{
+  "title": "Inertial Sensor Technologies-Their Role in Equine Gait Analysis, a Review",
+  "authors": [
+    "Crecan CM",
+    "Peștean CP"
+  ],
+  "year": 2023,
+  "journal": "Sensors (Basel, Switzerland)",
+  "doi": "10.3390/s23146301",
+  "pmid": "37514599",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37514599/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "馬のIMU歩様解析研究",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "慣性センサーによる測定",
+  "comparison": "各研究で異なる",
+  "outcomes": [
+    "歩様計測",
+    "非対称性"
+  ],
+  "main_findings": "歩様や非対称性の計測に関する有用性と適用場面を整理。",
+  "limitations": "ナラティブレビュー。全機器・全歩様で同一の精度を保証せず、傷害予測の妥当性は別問題。",
+  "evidence_tags": [
+    "歩様計測",
+    "非対称性"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "IMU"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

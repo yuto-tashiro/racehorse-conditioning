@@ -1,0 +1,44 @@
+{
+  "title": "The effects of extracorporeal shock-wave therapy on the ultrasonographic and histologic appearance of collagenase-induced equine forelimb suspensory ligament desmitis",
+  "authors": [
+    "McClure SR",
+    "VanSickle D",
+    "Evans R",
+    "Reinertson EL",
+    "Moran L"
+  ],
+  "year": 2004,
+  "journal": "Ultrasound in medicine & biology",
+  "doi": "10.1016/j.ultrasmedbio.2003.12.005",
+  "pmid": "15121248",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/15121248/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "成馬4頭の両前肢に作製した繋靱帯病変",
+  "sample_size": 4,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "ESWT",
+  "comparison": "同じ馬の非治療側",
+  "outcomes": [
+    "超音波所見",
+    "組織所見"
+  ],
+  "main_findings": "コラゲナーゼ誘発病変で、治療側の一部の画像指標の変化を報告。",
+  "limitations": "人工病変、4頭。自然発症例の競走復帰・再発率に直接外挿できない。",
+  "evidence_tags": [
+    "超音波所見",
+    "組織所見"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "ESWT"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

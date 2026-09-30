@@ -1,0 +1,49 @@
+{
+  "title": "Workload and spirometry associated with untethered swimming in horses",
+  "authors": [
+    "Leguillette R",
+    "McCrae P",
+    "Massie S",
+    "Filho SA",
+    "Bayly W",
+    "David F"
+  ],
+  "year": 2024,
+  "journal": "BMC veterinary research",
+  "doi": "10.1186/s12917-024-04143-3",
+  "pmid": "39030565",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/39030565/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "トレーニングされたアラブ種持久競技馬5頭",
+  "sample_size": 5,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "自由遊泳",
+  "comparison": "別の治療対照群なし",
+  "outcomes": [
+    "酸素摂取量",
+    "心拍",
+    "換気",
+    "乳酸"
+  ],
+  "main_findings": "対象条件では主として有酸素性の運動負荷が観察され、独特の呼吸パターンが報告された。",
+  "limitations": "少数の健康な持久競技馬。傷害馬の腱負荷や競走復帰の改善を示すものではない。",
+  "evidence_tags": [
+    "酸素摂取量",
+    "心拍",
+    "換気",
+    "乳酸"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Swimming"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

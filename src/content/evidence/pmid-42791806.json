@@ -1,0 +1,47 @@
+{
+  "title": "Effects of Repeated Monopolar Pulsed Capacitive Radiofrequency Energy Treatments on Mechanical Nociceptive Thresholds and Skin Temperature in Show-Jumping Horses with Thoracolumbar Pain",
+  "authors": [
+    "Brenna B",
+    "Pressanto MC",
+    "Pepe M",
+    "Boccioli B",
+    "Rouge S",
+    "Beccati F"
+  ],
+  "year": 2026,
+  "journal": "Animals : an open access journal from MDPI",
+  "doi": "10.3390/ani16182943",
+  "pmid": "42791806",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42791806/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "慢性的胸腰部痛が疑われる障害飛越馬15頭",
+  "sample_size": 15,
+  "study_design": "RANDOMIZED_TRIAL",
+  "intervention": "500 kHz単極容量性ラジオ波",
+  "comparison": "治療10頭・sham5頭",
+  "outcomes": [
+    "機械的侵害受容閾値",
+    "皮膚温度"
+  ],
+  "main_findings": "反復処置群で機械的侵害受容閾値の上昇を報告。直後の皮膚温度変化は群間差なし。",
+  "limitations": "小規模な障害飛越馬の研究。屈腱炎の治癒やサラブレッドの競走復帰を評価していない。",
+  "evidence_tags": [
+    "機械的侵害受容閾値",
+    "皮膚温度"
+  ],
+  "regions": [
+    "背部"
+  ],
+  "conditions": [
+    "背部痛"
+  ],
+  "interventions": [
+    "Radiofrequency"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

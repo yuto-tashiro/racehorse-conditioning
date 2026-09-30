@@ -1,0 +1,44 @@
+{
+  "title": "Assessing thermal changes in the equine thoracolumbar region following different capacitive-resistive electrical transfer protocols",
+  "authors": [
+    "Calle-González N",
+    "Rivero JL",
+    "Olivares J",
+    "Miró F",
+    "Argüelles D",
+    "Requena F",
+    "Munoz A"
+  ],
+  "year": 2025,
+  "journal": "Frontiers in veterinary science",
+  "doi": "10.3389/fvets.2025.1570120",
+  "pmid": "40470277",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40470277/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "背部痛のない健康馬10頭",
+  "sample_size": 10,
+  "study_design": "EXPERIMENTAL",
+  "intervention": "CRET強度の違い",
+  "comparison": "sham処置",
+  "outcomes": [
+    "皮膚温度"
+  ],
+  "main_findings": "中・高強度条件で皮膚温度の変化が観察された。",
+  "limitations": "皮膚表面温度の計測。筋深部温度や血流、疼痛改善、競走復帰を直接示さない。",
+  "evidence_tags": [
+    "皮膚温度"
+  ],
+  "regions": [
+    "背部"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Radiofrequency"
+  ],
+  "evidence_level": "C",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}

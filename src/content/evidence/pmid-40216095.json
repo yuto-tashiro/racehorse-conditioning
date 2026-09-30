@@ -1,0 +1,42 @@
+{
+  "title": "The application of the pyramidal training model for conditioning thoroughbred horses",
+  "authors": [
+    "Davie A",
+    "Beavers R",
+    "Denham J"
+  ],
+  "year": 2025,
+  "journal": "Journal of equine veterinary science",
+  "doi": "10.1016/j.jevs.2025.105567",
+  "pmid": "40216095",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40216095/",
+  "species": [
+    "EQUINE"
+  ],
+  "population": "サラブレッドへの応用を論じる総説（ヒト由来モデルを含む）",
+  "sample_size": null,
+  "study_design": "EXPERT_REVIEW",
+  "intervention": "トレーニング強度の構成",
+  "comparison": "直接比較試験ではない",
+  "outcomes": [
+    "内部負荷",
+    "トレーニング設計"
+  ],
+  "main_findings": "心拍と乳酸反応を使った負荷の把握を論じる。",
+  "limitations": "ヒトのモデルの応用を含み、競走馬の成績向上を保証する臨床試験ではない。",
+  "evidence_tags": [
+    "内部負荷",
+    "トレーニング設計"
+  ],
+  "regions": [
+    "全身"
+  ],
+  "conditions": [],
+  "interventions": [
+    "Training Load"
+  ],
+  "evidence_level": "D",
+  "reviewed_by": "編集時の書誌・抄録確認（専門家監修前）",
+  "last_reviewed": "2026-09-30",
+  "verification": "ABSTRACT"
+}
